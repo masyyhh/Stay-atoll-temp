@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | Tropical Escapes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Tropical Background with Dark Overlay */
+        .bg-container {
+            height: 100vh;
+            /* Initial background image */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+                              url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            
+            /* Smooth fade transition for the background change */
+            transition: background-image 1.5s ease-in-out;
+        }
+
+        /* Top Left Logo Placeholder */
+        .logo {
+            position: absolute;
+            top: 30px;
+            left: 40px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Animated Coming Soon Text */
+        .coming-soon {
+            font-size: 4.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            /* Shimmering Gradient Effect */
+            background: linear-gradient(90deg, #00d2ff 0%, #ffffff 50%, #00d2ff 100%);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            to { background-position: 200% center; }
+        }
+
+        /* Description Text */
+        .description {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            color: #f0f0f0;
+        }
+
+        /* Email Notification Form */
+        .notify-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 50px;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .notify-form input {
+            flex: 1;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            outline: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .notify-form button {
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
+            background-color: #ff9800; /* Tropical Sunset Orange */
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .notify-form button:hover {
+            background-color: #e68a00;
+            transform: translateY(-2px);
+        }
+
+        /* Social Media Icons */
+        .socials {
+            display: flex;
+            gap: 25px;
+        }
+
+        .socials a {
+            color: white;
+            font-size: 1.8rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .socials a:hover {
+            color: #00d2ff; /* Ocean Blue hover effect */
+            transform: translateY(-5px);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .logo { left: 20px; top: 20px; font-size: 1.2rem; }
+            .coming-soon { font-size: 2.8rem; }
+            .description { font-size: 1rem; }
+            .notify-form { flex-direction: column; }
+            .notify-form button { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-container" id="dynamic-bg">
+        <div class="logo">
+            
+        </div>
+        
+        <h1 class="coming-soon">Coming Soon</h1>
+        
+        <p class="description">
+            Your dream tropical getaway is on the horizon. We are crafting the ultimate booking experience for your next paradise holiday. Sign up to get exclusive early-bird deals!
+        </p>
+
+        <form class="notify-form">
+            <input type="email" placeholder="Enter your email address" required>
+            <button type="submit">Notify Me</button>
+        </form>
+
+        <div class="socials">
+            <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+
+    <script>
+        // Array of tropical image URLs
+        const backgroundImages = [
+            "url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')", // Beach top view
+            "url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')", // Tropical cove
+            "url('https://images.unsplash.com/photo-1540202404-b711802e34ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')", // Palm trees
+            "url('https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')"  // Clear water
+        ];
+
+        let currentIndex = 0;
+        const bgElement = document.getElementById('dynamic-bg');
+
+        function changeBackground() {
+            // Move to the next image, loop back to 0 if at the end
+            currentIndex = (currentIndex + 1) % backgroundImages.length;
+            
+            // Re-apply the dark gradient overlay along with the new image
+            bgElement.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), ${backgroundImages[currentIndex]}`;
+        }
+
+        // Set interval to 5 minutes (5 minutes * 60 seconds * 1000 milliseconds = 300,000 ms)
+        const fiveMinutes = 300000;
+        setInterval(changeBackground, fiveMinutes);
+    </script>
+</body>
+</html>
